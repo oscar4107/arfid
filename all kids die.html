@@ -1,1 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Download</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles specific to the download page */
+        .download-container {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            text-align: center;
+            color: #ffffff;
+        }
 
+        .download-container h1 {
+            font-size: 45px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .download-container p {
+            font-size: 25px;
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 15px;
+            font-family: 'VT323', monospace;
+            font-size: 25px;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .password-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .password-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 20px;
+        }
+
+        .download-btn {
+            font-family: 'VT323', monospace;
+            font-size: 30px;
+            padding: 12px 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            width: 100%;
+        }
+
+        .download-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: scale(1.02);
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            min-height: 30px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .success-message {
+            color: #a5d6a5;
+        }
+
+        .error-message {
+            color: #ffb3b3;
+        }
+
+        /* Navigation adjustments for download page */
+        .top-nav {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .site-title {
+            color: #ffffff;
+        }
+
+        .nav-link {
+            color: #ffffff;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .download-container {
+                margin: 50px 20px;
+                padding: 30px;
+            }
+
+            .download-container h1 {
+                font-size: 35px;
+            }
+
+            .download-btn {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (matching your style.css structure) -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+        </div>
+        <h1 class="site-title">Secure Download</h1>
+        <div class="nav-right">
+            <a href="#" class="nav-link">Help</a>
+            <a href="#" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="content" style="background: none; backdrop-filter: none; max-width: none; margin: 0;">
+        <div class="download-container">
+            <h1>🔒 Protected Download</h1>
+            <p>Enter the password to access the file</p>
+            
+            <input type="password" id="passwordInput" class="password-input" placeholder="Enter password" autofocus>
+            
+            <button onclick="checkPassword()" class="download-btn">⬇️ Download File</button>
+            
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+
+    <script>
+        // Set your password here
+        const CORRECT_PASSWORD = "allkidsdieinflorida"; // Change this to your desired password
+        
+        // File details - change these to your actual file
+        const FILE_URL = "https://example.com/your-file.pdf"; // Replace with your file URL
+        const FILE_NAME = "downloaded-file.pdf"; // Replace with desired filename
+
+        function checkPassword() {
+            const passwordInput = document.getElementById('passwordInput');
+            const messageDiv = document.getElementById('message');
+            const enteredPassword = passwordInput.value;
+
+            if (enteredPassword === CORRECT_PASSWORD) {
+                // Success message
+                messageDiv.innerHTML = "✅ Password correct! Download starting...";
+                messageDiv.className = "message success-message";
+                
+                // Trigger download
+                triggerDownload();
+                
+                // Clear password field
+                passwordInput.value = "";
+            } else {
+                // Error message
+                messageDiv.innerHTML = "❌ Incorrect password. Please try again.";
+                messageDiv.className = "message error-message";
+                
+                // Clear password field
+                passwordInput.value = "";
+                
+                // Shake animation effect (optional)
+                passwordInput.style.animation = "shake 0.5s ease-in-out";
+                setTimeout(() => {
+                    passwordInput.style.animation = "";
+                }, 500);
+            }
+        }
+
+        function triggerDownload() {
+            // Method 1: If you want to download a file from a URL
+            const link = document.createElement('a');
+            link.href = FILE_URL;
+            link.download = FILE_NAME;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Method 2: If you want to create a text file with content (uncomment to use)
+            /*
+            const content = "This is the content of your secret file!";
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = "secret-file.txt";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+            */
+        }
+
+        // Allow Enter key to submit
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+        // Add shake animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
