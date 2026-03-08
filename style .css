@@ -1,1 +1,107 @@
+/* Import custom font */
+@font-face {
+    font-family: 'VT323';
+    src: url('VT323-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply base styles to body */
+body {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation styling */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    width: 100%;
+    background-color: transparent;
+}
+
+/* Style for navigation links */
+.nav-link {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #666;
+    text-decoration: underline;
+}
+
+/* Site title styling */
+.site-title {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Container for left nav items */
+.nav-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Container for right nav items */
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Main content area */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Image styling */
+.feature-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .top-nav {
+        padding: 15px 20px;
+    }
+    
+    .site-title {
+        font-size: 18px;
+    }
+    
+    .nav-link {
+        font-size: 18px;
+    }
+}
