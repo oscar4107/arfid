@@ -157,7 +157,7 @@
         const CORRECT_PASSWORD = "allkidsdieinflorida"; // Change this to your desired password
         
         // File details - change these to your actual file
-        const FILE_URL = "https://example.com/your-file.pdf"; // Replace with your file URL
+        const FILE_URL = "https://drive.google.com/uc?export=download&id=1ivUnn2WK7kTkT3BOepa_4SH_B0u5oQvD"; // Replace with your file URL
         const FILE_NAME = "allkidsdieinflorida.pdf"; // Replace with desired filename
 
         function checkPassword() {
@@ -167,7 +167,7 @@
 
             if (enteredPassword === CORRECT_PASSWORD) {
                 // Success message
-                messageDiv.innerHTML = "✅ Password correct! Download starting...";
+                messageDiv.innerHTML = "Password correct! Download starting...";
                 messageDiv.className = "message success-message";
                 
                 // Trigger download
@@ -177,7 +177,7 @@
                 passwordInput.value = "";
             } else {
                 // Error message
-                messageDiv.innerHTML = "❌ Incorrect password. Please try again.";
+                messageDiv.innerHTML = "ncorrect password. Please try again.";
                 messageDiv.className = "message error-message";
                 
                 // Clear password field
