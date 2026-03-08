@@ -71,7 +71,7 @@ body::before {
 }
 
 .nav-link:hover {
-    color: #ffd700; /* Gold color on hover */
+    color: #fff; /* White color on hover */
     text-decoration: underline;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
