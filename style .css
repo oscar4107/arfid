@@ -13,14 +13,34 @@
     box-sizing: border-box;
 }
 
-/* Apply base styles to body */
+/* Apply base styles to body with background image */
 body {
     font-family: 'VT323', monospace;
     font-size: 20px;
     line-height: 1.5;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    
+    /* Background image settings */
+    background-image: url('https://github.com/cebem1nt/dotfiles/blob/main/wallpapers/blue_foggy_forest_trees_person_house.jpg?raw=true');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps background fixed while scrolling */
+    
+    /* Optional overlay to make text more readable */
+    position: relative;
+}
+
+/* Optional semi-transparent overlay for better text readability */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Dark overlay at 30% opacity */
+    z-index: -1;
 }
 
 /* Navigation styling */
@@ -31,6 +51,11 @@ body {
     padding: 20px 40px;
     width: 100%;
     background-color: transparent;
+    /* Add slight background to make text pop */
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px); /* Adds blur effect behind nav */
+    position: relative;
+    z-index: 1;
 }
 
 /* Style for navigation links */
@@ -38,14 +63,16 @@ body {
     font-family: 'VT323', monospace;
     font-size: 20px;
     text-decoration: none;
-    color: #000;
+    color: #fff; /* White text for better contrast on dark bg */
     padding: 5px 10px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
 }
 
 .nav-link:hover {
-    color: #666;
+    color: #ffd700; /* Gold color on hover */
     text-decoration: underline;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Site title styling */
@@ -58,6 +85,9 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    color: #fff; /* White text for better contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+    letter-spacing: 2px; /* Slight letter spacing for better visibility */
 }
 
 /* Container for left nav items */
@@ -74,27 +104,25 @@ body {
     justify-content: flex-end;
 }
 
-/* Main content area */
-main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-/* Image styling */
-.feature-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Optional: Add some content to show scrolling effect */
+.content {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    z-index: 1;
+    position: relative;
 }
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .top-nav {
         padding: 15px 20px;
+        background-color: rgba(0, 0, 0, 0.4); /* Darker on mobile for readability */
     }
     
     .site-title {
@@ -103,5 +131,26 @@ main {
     
     .nav-link {
         font-size: 18px;
+    }
+    
+    .content {
+        padding: 20px;
+        margin: 20px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 400px) {
+    .top-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .site-title {
+        position: static;
+        transform: none;
+        order: -1;
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
