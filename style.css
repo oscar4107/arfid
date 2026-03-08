@@ -123,7 +123,7 @@ body::before {
     backdrop-filter: blur(5px);
     border-radius: 10px;
     z-index: 1;
-    position: relative;
+    position: center;
     text-align: center; /* Center content text */
 }
 
