@@ -18,14 +18,8 @@ background-image: url('https://github.com/cebem1nt/dotfiles/blob/main/wallpapers
   background-attachment: fixed;
   }
 
-header {
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
 
-header h1 {
+h1 {
   color: white;
   font-size: 48px;
   margin: 0;
