@@ -7,6 +7,8 @@ body {
 background-image: url('https://github.com/cebem1nt/dotfiles/blob/main/wallpapers/dragons_lake_fog_white_boat_person.jpg?raw=true');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   }
 
 header {
