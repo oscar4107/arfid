@@ -1,6 +1,8 @@
 body {
-background-image url('https://github.com/cebem1nt/dotfiles/blob/main/wallpapers/dragons_lake_fog_white_boat_person.jpg?raw=true');
+background-image: url('https://github.com/cebem1nt/dotfiles/blob/main/wallpapers/dragons_lake_fog_white_boat_person.jpg?raw=true');
+  backround-size: cover;
   }
 f {
   :color blue;
+  :font-size 30px;
 }
