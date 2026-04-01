@@ -1,5 +1,6 @@
 *{
-  font-family: arial;
+  font-family: vt323;
+  src: url("VT323-Reugular.ttf") Format(truetype");
 }
 
 body {
