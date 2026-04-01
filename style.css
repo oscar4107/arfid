@@ -24,3 +24,18 @@ h1 {
   font-size: 48px;
   margin: 0;
 }
+
+.left-links {
+  display: flex;
+  gap: 20px;
+}
+
+.right-links {
+  display: flex;
+  gap: 20px;
+}
+
+a {
+  color: white;
+  font-size: 18px;
+}
