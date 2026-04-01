@@ -39,7 +39,10 @@ h1 {
   color: white;
   font-size: 48px;
   margin: 0;
+  line-height: 1;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   white-space: nowrap;
 }
 a {
