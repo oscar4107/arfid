@@ -30,6 +30,7 @@ header {
   display: flex;
   gap: 20px;
   flex: 1;
+  align-item: center;
 }
 
 .right-links {
@@ -43,7 +44,6 @@ h1 {
   margin: 0;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
   white-space: nowrap;
 }
 a {
