@@ -1,12 +1,12 @@
 @font-face{
   font-family: vt323;
-  src: url("VT323-Regular.ttf") Format("truetype");
+  src: url('VT323-Regular.ttf') Format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 *{
-  font-family: "vt323", monospace;
+  font-family: 'vt323', monospace;
 }
 
 body {
