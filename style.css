@@ -25,14 +25,13 @@ h1 {
   margin: 0;
 }
 
-.left-links {
-  display: flex;
-  gap: 20px;
+.left-links, .right-links {
+  flex: 1;
 }
 
 .right-links {
   display: flex;
-  gap: 20px;
+  justify-content: flex-end;
 }
 
 a {
