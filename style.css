@@ -19,6 +19,7 @@ background-image: url('https://github.com/cebem1nt/dotfiles/blob/main/wallpapers
   }
 
 h1 {
+  text-align: center;
   color: white;
   font-size: 48px;
   margin: 0;
