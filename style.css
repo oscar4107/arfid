@@ -33,9 +33,6 @@ header {
   align-item: center;
 }
 
-.right-links {
-  justify-content: flex-end;
-}
 
 h1 {
   text-align: center;
@@ -43,7 +40,6 @@ h1 {
   font-size: 48px;
   margin: 0;
   position: absolute;
-  left: 50%;
   white-space: nowrap;
 }
 a {
