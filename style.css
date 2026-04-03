@@ -25,6 +25,7 @@ header {
 
 a {
   display: flex;
+  text-align: center;
   color: white;
   font-size: 48px;
   margin: 0;
