@@ -26,6 +26,7 @@ header {
 }
 
 a {
+  text-align: center;
   color: white;
   font-size: 48px;
   text-decoration: none;
