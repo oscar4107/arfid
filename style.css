@@ -29,7 +29,6 @@ a {
   color: white;
   font-size: 48px;
   text-decoration: none;
-  line-height: 1;
 }
 
 h1 {
@@ -37,6 +36,5 @@ h1 {
   color: white;
   font-size: 48px;
   margin: 0;
-  line-height: 1;
   grid-column: 2 / 3;
 }
