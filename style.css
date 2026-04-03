@@ -22,9 +22,19 @@ header {
   align-items: center;
   padding: 20px;
 }
+.left-links {
+  display: flex;
+  gap: 20px;
+  justify-self: start;
+}
+
+.right-links {
+  display: flex;
+  gap: 20px;
+  justify-self: end;
+}
 
 a {
-  display: flex;
   text-align: center;
   color: white;
   font-size: 48px;
